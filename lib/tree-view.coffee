@@ -328,14 +328,21 @@ class TreeView extends ScrollView
 
     new BufferedProcess({command, args, stderr, exit})
 
-  copySelectedEntry: ->
-    entry = @selectedEntry()
+  copyEntry: (entry)->
     return unless entry and entry isnt @root
     oldPath = entry.getPath()
 
     CopyDialog ?= require './copy-dialog'
     dialog = new CopyDialog(oldPath)
     dialog.attach()
+
+  copySelectedEntry: ->
+    entry = @selectedEntry()
+    @copyEntry(entry)
+
+  duplicateCurrentFile: ->
+    entry = @selectActiveFile()
+    @copyEntry(entry)
 
   removeSelectedEntries: ->
     selectedPaths = @selectedPaths()

@@ -15,6 +15,7 @@
         { 'label': 'Toggle', 'command': 'tree-view:toggle' }
         { 'label': 'Reveal Active File', 'command': 'tree-view:reveal-active-file' }
         { 'label': 'Toggle Tree Side', 'command': 'tree-view:toggle-side' }
+        { 'label': 'Duplicate Current File', 'command': 'tree-view:duplicate-current-file' }
       ]
     ]
   }
